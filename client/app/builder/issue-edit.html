@@ -1,0 +1,15 @@
+<form role="form">
+	<div class="form-group">
+		<label for="title" class="control-label">Name</label>
+		<input type="text" ng-model="root.name" class="form-control" id="title" placeholder="Enter the name of the global risk">
+	</div>
+	<div class="form-group">
+		<label for="title" class="control-label">URL</label>
+		<input type="text" ng-model="root.path" class="form-control" id="title" placeholder="Enter a shorthand URL for this issue">
+	</div>
+	<div class="form-group">
+		<label for="title" class="control-label">Info</label>
+		<input type="text" ng-model="root.info" class="form-control" id="title" placeholder="Shortly summarize this global risk">
+	</div>
+	<input type="submit" class="btn btn-primary" ng-click="saveIssue(root)" value="Save">
+</form>

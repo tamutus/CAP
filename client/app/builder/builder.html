@@ -1,0 +1,59 @@
+<div ng-include="'./components/navbar/navbar.html'"></div>
+<!-- <div ng-include="'./components/sidebar/leftbar.html'"></div> -->
+
+<div ng-show="root===undefined"></h1>Sorry!  Issue not found!</h1></div>
+
+<header>
+	<div class="container">
+		<h1>{{root.name}}</h1>
+		<p>{{root.info}}</p>
+		<h2>Connections</h2>
+		<table>
+			<tr>
+				<th>Connected Issue</th>
+				<th>Score</th>
+				<th>Connect</th>
+				<th>Detach</th>
+			</tr>
+			<tr ng-repeat="edge in edges">
+				<td><a ng-click="makeIssue(edge.leaf)" ng-href="builder/issue/{{edge.leaf.path}}">{{edge.leaf.name}}</a></td>
+				<td>{{edge.score}}</td>
+				<td><button ng-click="connectIssue(root, edge.leaf)">Connect</button></td>
+				<td><button ng-click="detachIssue(root, edge.leaf)">Detach</button></td>
+			<tr>
+		</table>
+		<h2>Edges</h2>
+		<table>
+			<tr ng-repeat="edge in edges">
+				<td>{{edge}}</td>
+			<tr>
+		</table>
+
+		<button class="btn btn-primary" ui-sref="issue.view">View</button>
+		<button class="btn btn-primary" ui-sref="issue.edit">Edit</button>
+	</div>
+	<br><br>
+	<div class="container" ui-view></div>
+	<br><br><br><br>
+	
+	<div class="container">
+		<form class="issue-form">
+			<h3>This form is for development purposes only.</h3>
+			<p class="input-group">
+				<input type="text" class="form-control" placeholder="Enter the name of the issue you wish to identify" ng-model="newIssue">
+				<span class="input-group-btn">
+					<button type="submit" class="btn btn-primary" ng-click="addIssue()">Add New</button>
+				</span>
+			</p>
+		</form>
+		<table>
+			<tr ng-repeat="issue in issues">
+				<td><a ng-click="makeIssue(issue)" ng-href="builder/issue/{{issue.path}}">{{issue.name}}</a></td>
+				<td><button ng-click="connectIssue(root, issue)">Connect</button></td>
+				<td><button ng-click="detachIssue(root, issue)">Detach</button></td>
+			<tr>
+		</table>
+	</div>
+</header>
+<!-- <ul ng-repeat="issue in issues">
+	<li>{{majorIssues}} -->

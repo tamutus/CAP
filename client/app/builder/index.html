@@ -1,0 +1,42 @@
+<div ng-include="'./components/navbar/navbar.html'"></div>
+
+<header>
+	<div class="container">
+		<h1>Consensus Builder</h1>
+		<p>These are the global risks that the World Economic Forum has concluded to be the most pressing existential risks to our society in the coming year.</p>
+		<p>The WEF categorized these risks into five categories:
+			<ul>
+				<li>Geopolitical risks</li>
+				<li>Societal risks</li>
+				<li>Economic Risks</li>
+				<li>Environmental Risks</li>
+				<li>Technological Risks</li>
+			</ul>
+		</p>
+	</div>
+</header>
+
+<div class="container">
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header">Global Risks:</h1>
+			<ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="risk in risks">
+				<li><a href="builder/risk/{{risk.path}}" tooltip="{{risk.info}}">{{risk.name}}</a><button type="button" class="close" ng-click="deleteRisk(risk)">&times;</button></li>
+			</ul>
+		</div>
+	</div>
+
+	<ul ng-repeat="risk in risks">
+		<li>{{risk}}</li>
+	</ul>
+
+	<form class="risk-form">
+		<h3>This form is for development purposes only.</h3>
+		<p class="input-group">
+			<input type="text" class="form-control" placeholder="Type in each global risk here" ng-model="newRisk">
+			<span class="input-group-btn">
+				<button type="submit" class="btn btn-primary" ng-click="addRisk()">Add New</button>
+			</span>
+		</p>
+	</form>
+</div>
