@@ -77,7 +77,7 @@ exports.removeEdge = function(req, res) {
     if(err) { return handleError(res, err); }
     if(!issuegraph) { return res.status(404).send('issuegraph Not Found'); }
     var toPull = _.findIndex(issuegraph.edges, function(edge){
-        return edge.vertex == req.params.vertex;
+        return edge.vertex === req.params.vertex;
     });
     console.log('Splicing out item ');
     console.log(issuegraph.edges[toPull]);
@@ -101,7 +101,7 @@ exports.editEdge = function(req, res) {
     if(err) { return handleError(res, err); }
     if(!issuegraph) { return res.status(404).send('issuegraph Not Found'); }
     var toEdit = _.findIndex(issuegraph.edges, function(edge) {
-      return edge.vertex == req.params.vertex;
+      return edge.vertex === req.params.vertex;
     });
     console.log(toEdit);
     if(req.params.direction === 'up') { issuegraph.edges[toEdit].score++; }

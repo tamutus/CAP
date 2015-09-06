@@ -27,10 +27,13 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
+
+
+
     <div ui-view="">
       <h1>Hello world</h1>
     </div>
-
+    
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -59,12 +62,13 @@
       <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
       <!-- endbower -->
       <script src="socket.io-client/socket.io.js"></script>
+      
     <!-- endbuild -->
 
         
         <!-- build:js(.tmp) app/app.js -->
-        
         <script src="app/app.js"></script>
+          
           <!-- injector:js -->
           <script src="app/account/account.js"></script>
           <script src="app/account/login/login.controller.js"></script>
@@ -78,6 +82,8 @@
           <script src="app/main/main.js"></script>
           <script src="app/manager/manager.controller.js"></script>
           <script src="app/manager/manager.js"></script>
+          <script src="components/arbor/arbor-tween.js"></script>
+          <script src="components/arbor/arbor.js"></script>
           <script src="components/auth/auth.service.js"></script>
           <script src="components/auth/user.service.js"></script>
           <script src="components/modal/modal.service.js"></script>
@@ -86,6 +92,8 @@
           <script src="components/sidebar/sidebar.controller.js"></script>
           <script src="components/socket/socket.service.js"></script>
           <!-- endinjector -->
+        
+
         <!-- endbuild -->
 </body>
 </html>

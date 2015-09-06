@@ -14,6 +14,9 @@ var UserSchema = new Schema({
   hashedPassword: String,
   provider: String,
   salt: String,
+// Customized User information to set up:
+  // comments: [{type: Schema.Types.ObjectId, ref: 'Comment'}],
+  // profile: {type: Schema.Types.ObjectId, ref: 'Profile'}
 });
 
 /**
@@ -46,7 +49,7 @@ UserSchema
   .get(function() {
     return {
       '_id': this._id,
-      'role': this.role
+      'role': this.role,
     };
   });
 

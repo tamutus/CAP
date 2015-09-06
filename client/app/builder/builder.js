@@ -31,7 +31,7 @@ angular.module('capApp')
 
       .state('issue', {
         url: '^/builder/issue/:root',
-        templateUrl: 'app/builder/builder.html',
+        templateUrl: 'app/builder/issue.html',
         controller: 'BuilderCtrl'
       })
 
